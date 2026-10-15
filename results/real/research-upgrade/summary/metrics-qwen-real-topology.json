@@ -1,0 +1,84 @@
+{
+  "providers": [
+    "AIOpsLabProvider"
+  ],
+  "diagnosis_engines": [
+    "OpenAICompatibleDiagnosisEngine"
+  ],
+  "model_names": [
+    "qwen2.5:14b"
+  ],
+  "variants": [
+    "qwen-real-topology"
+  ],
+  "synthetic_fixture_results": false,
+  "case_count": 5,
+  "fault_case_count": 4,
+  "unique_problem_count": 5,
+  "unique_fault_problem_count": 4,
+  "repeated_case_count": 0,
+  "fault_detection_recall": 1.0,
+  "course_detection_accuracy": 1.0,
+  "detection_accuracy_95ci": {
+    "low": 0.5100999795960008,
+    "high": 1.0,
+    "method": "Wilson score"
+  },
+  "overall_accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "false_positive_rate": 0.0,
+  "localization_accuracy": 1.0,
+  "root_cause_accuracy": 1.0,
+  "abstention_count": 0,
+  "abstention_rate": 0.0,
+  "coverage": 1.0,
+  "selective_accuracy": 1.0,
+  "calibration": {
+    "sample_count": 5,
+    "ece": 0.14620060000000001,
+    "brier_score": 0.0754322000006,
+    "bins": [
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "count": 1,
+        "mean_confidence": 0.4,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "count": 1,
+        "mean_confidence": 0.869,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 3,
+        "mean_confidence": 0.999999,
+        "accuracy": 1.0
+      }
+    ],
+    "configured_temperatures": [
+      1.0
+    ],
+    "raw_ece": 0.1462,
+    "raw_brier_score": 0.07543219999999999,
+    "fitted_temperature_candidate": 1.0,
+    "fitted_candidate_ece": 0.14620060000000001,
+    "fitted_candidate_brier_score": 0.0754322000006,
+    "fit_note": "Reported ECE/Brier use the configured temperature. The fitted candidate uses this dataset only and must be evaluated on a held-out test split."
+  },
+  "avg_response_time_all_seconds": 90.6861,
+  "avg_response_time_faults_seconds": 97.8024,
+  "avg_tool_calls": 1.8,
+  "total_token_usage": 15072,
+  "repair_case_count": 0,
+  "repair_success_rate": null,
+  "avg_recovery_time_seconds": null,
+  "invalid_operation_rate": null,
+  "error_count": 0
+}

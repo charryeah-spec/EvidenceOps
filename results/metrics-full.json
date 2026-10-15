@@ -1,0 +1,77 @@
+{
+  "providers": [
+    "FixtureProvider"
+  ],
+  "diagnosis_engines": [
+    "RuleBasedDiagnosisEngine"
+  ],
+  "model_names": [
+    "rule-based-v2-evidence-only"
+  ],
+  "variants": [
+    "full"
+  ],
+  "synthetic_fixture_results": true,
+  "case_count": 24,
+  "fault_case_count": 20,
+  "unique_problem_count": 5,
+  "unique_fault_problem_count": 4,
+  "repeated_case_count": 19,
+  "fault_detection_recall": 1.0,
+  "course_detection_accuracy": 1.0,
+  "detection_accuracy_95ci": {
+    "low": 0.8388698745050667,
+    "high": 0.9999999999999998,
+    "method": "Wilson score"
+  },
+  "overall_accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "false_positive_rate": 0.0,
+  "localization_accuracy": 1.0,
+  "root_cause_accuracy": 1.0,
+  "abstention_count": 0,
+  "abstention_rate": 0.0,
+  "coverage": 1.0,
+  "selective_accuracy": 1.0,
+  "calibration": {
+    "sample_count": 24,
+    "ece": 0.07208333333333336,
+    "brier_score": 0.00592083333333333,
+    "bins": [
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "count": 5,
+        "mean_confidence": 0.9,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 19,
+        "mean_confidence": 0.9352631578947368,
+        "accuracy": 1.0
+      }
+    ],
+    "configured_temperatures": [
+      1.0
+    ],
+    "raw_ece": 0.07208333333333339,
+    "raw_brier_score": 0.0059208333333333335,
+    "fitted_temperature_candidate": 1.0,
+    "fitted_candidate_ece": 0.07208333333333336,
+    "fitted_candidate_brier_score": 0.00592083333333333,
+    "fit_note": "Reported ECE/Brier use the configured temperature. The fitted candidate uses this dataset only and must be evaluated on a held-out test split."
+  },
+  "avg_response_time_all_seconds": 0.0002,
+  "avg_response_time_faults_seconds": 0.00022,
+  "avg_tool_calls": 1.8333333333333333,
+  "total_token_usage": 0,
+  "repair_case_count": 0,
+  "repair_success_rate": null,
+  "avg_recovery_time_seconds": null,
+  "invalid_operation_rate": null,
+  "error_count": 0
+}

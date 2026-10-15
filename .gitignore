@@ -1,0 +1,15 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+.streamlit/
+upstream/
+metrics_output/
+results/aiopslab/
+dist/
+.DS_Store
+*.mp4
+*.zip

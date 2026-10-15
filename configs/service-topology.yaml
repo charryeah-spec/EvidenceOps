@@ -1,0 +1,26 @@
+services:
+  - frontend
+  - search
+  - geo
+  - rate
+  - profile
+  - recommendation
+  - user
+  - reservation
+
+# Direction: caller -> callee. If a callee fails, symptoms may propagate
+# backwards to its callers.
+dependencies:
+  - {caller: frontend, callee: search}
+  - {caller: frontend, callee: profile}
+  - {caller: frontend, callee: recommendation}
+  - {caller: frontend, callee: user}
+  - {caller: frontend, callee: reservation}
+  - {caller: search, callee: geo}
+  - {caller: search, callee: rate}
+  - {caller: recommendation, callee: profile}
+  - {caller: reservation, callee: profile}
+  - {caller: reservation, callee: rate}
+
+propagation_decay: 0.65
+max_hops: 3

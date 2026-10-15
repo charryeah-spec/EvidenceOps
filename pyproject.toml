@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "evidenceops"
+version = "0.2.0"
+description = "Evidence-driven, explainable AIOps diagnosis and human-approved remediation agent"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "httpx>=0.27,<1",
+  "langchain-core>=0.3,<2",
+  "matplotlib>=3.9,<4",
+  "pandas>=2.2,<4",
+  "pydantic>=2.8,<3",
+  "pydantic-settings>=2.4,<3",
+  "PyYAML>=6,<7",
+  "rank-bm25>=0.2.2,<1",
+  "rich>=13.7,<15",
+  "scikit-learn>=1.5,<2",
+  "seaborn>=0.13,<1",
+  "streamlit>=1.37,<2",
+  "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-asyncio>=0.24,<2", "ruff>=0.6,<1"]
+deliverables = ["reportlab>=4.2,<5"]
+
+[project.scripts]
+evidenceops = "evidenceops.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["evidenceops"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [
+  ".cache",
+  ".venv",
+  "dist",
+  "metrics_output",
+  "results",
+  "upstream",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "B", "PLW", "RUF"]
+ignore = ["B008", "RUF001", "RUF002", "RUF003"]

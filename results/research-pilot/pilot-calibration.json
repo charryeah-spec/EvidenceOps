@@ -1,0 +1,34 @@
+{
+  "sample_count": 5,
+  "temperature": 1.0,
+  "before": {
+    "sample_count": 5,
+    "ece": 0.018000000000000016,
+    "brier_score": 0.000580000000000001,
+    "bins": [
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 5,
+        "mean_confidence": 0.982,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "after_on_calibration_split": {
+    "sample_count": 5,
+    "ece": 0.018000400000000027,
+    "brier_score": 0.0005800000004000023,
+    "bins": [
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 5,
+        "mean_confidence": 0.9819996,
+        "accuracy": 1.0
+      }
+    ]
+  },
+  "deployment_setting": "CONFIDENCE_TEMPERATURE=1.000",
+  "warning": "This parameter was fitted on the supplied calibration split. Report final ECE/Brier only on a separate held-out test split."
+}

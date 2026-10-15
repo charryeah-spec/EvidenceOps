@@ -1,0 +1,26 @@
+cases:
+  - {case_id: cfg-01, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-02, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-03, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-04, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-05, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: pod-01, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-02, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-03, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-04, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-05, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: loss-01, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: loss-02, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: loss-03, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: loss-04, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: loss-05, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: delay-01, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: delay-02, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: delay-03, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: delay-04, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: delay-05, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: normal-01, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
+  - {case_id: normal-02, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
+  - {case_id: normal-03, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
+  - {case_id: normal-04, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
+

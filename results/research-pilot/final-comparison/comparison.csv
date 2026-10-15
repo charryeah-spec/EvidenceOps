@@ -1,0 +1,3 @@
+model_spec,model_name,case_count,unique_problem_count,fault_detection_recall,localization_accuracy,root_cause_accuracy,coverage,selective_accuracy,abstention_rate,ece,brier_score,avg_response_time_seconds,total_token_usage,error_count
+rule,rule-based-v2-evidence-only,5,5,1.0,1.0,1.0,1.0,1.0,0.0,0.07000000000000002,0.005699999999999996,0.00018,0,0
+qwen2.5:14b,qwen2.5:14b,5,5,1.0,1.0,1.0,1.0,1.0,0.0,0.018000400000000027,0.0005800000004000023,20.4558,4566,0

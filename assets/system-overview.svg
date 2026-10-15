@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">EvidenceOps trustworthy AIOps architecture</title>
+  <desc id="desc">An eight-stage incident loop with topology-aware localization, calibrated abstention, and a deterministic safety boundary.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061120"/><stop offset="0.65" stop-color="#0b172b"/><stop offset="1" stop-color="#10213b"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#28d7d1"/><stop offset="1" stop-color="#a8ff3e"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}.muted{fill:#91a4bf}.white{fill:#f3f7ff}.cyan{fill:#28d7d1}.lime{fill:#a8ff3e}.card{fill:#0e1c31;stroke:#29405f;stroke-width:2}.phase{fill:#10233b;stroke:#35617b;stroke-width:2}.small{font-size:20px}.label{font-size:22px;font-weight:700}.body{font-size:24px}.title{font-size:60px;font-weight:800;letter-spacing:-1px}.kicker{font-size:18px;font-weight:800;letter-spacing:4px}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1420" cy="60" r="300" fill="#0dd7cf" opacity="0.06"/>
+  <text x="76" y="82" class="mono cyan kicker">ARCHITECTURE / TRUST BOUNDARIES</text>
+  <text x="76" y="152" class="sans white title">A controlled loop around probabilistic reasoning</text>
+  <text x="76" y="202" class="sans muted body">Read-only evidence enters the model. Every cluster write stays inside a deterministic control plane.</text>
+  <text x="1420" y="78" text-anchor="end" class="mono white label">EVIDENCE<tspan class="cyan">OPS</tspan></text>
+
+  <g class="sans label" text-anchor="middle">
+    <rect x="76" y="270" width="155" height="58" rx="29" class="phase"/><text x="153" y="307" class="white">DETECT</text>
+    <text x="247" y="307" class="cyan">→</text>
+    <rect x="270" y="270" width="165" height="58" rx="29" class="phase"/><text x="352" y="307" class="white">LOCALIZE</text>
+    <text x="451" y="307" class="cyan">→</text>
+    <rect x="474" y="270" width="170" height="58" rx="29" class="phase"/><text x="559" y="307" class="white">DIAGNOSE</text>
+    <text x="660" y="307" class="cyan">→</text>
+    <rect x="683" y="270" width="130" height="58" rx="29" class="phase"/><text x="748" y="307" class="white">PLAN</text>
+    <text x="829" y="307" class="cyan">→</text>
+    <rect x="852" y="270" width="150" height="58" rx="29" class="phase"/><text x="927" y="307" class="white">APPROVE</text>
+    <text x="1018" y="307" class="cyan">→</text>
+    <rect x="1041" y="270" width="150" height="58" rx="29" class="phase"/><text x="1116" y="307" class="white">EXECUTE</text>
+    <text x="1207" y="307" class="cyan">→</text>
+    <rect x="1230" y="270" width="135" height="58" rx="29" class="phase"/><text x="1297" y="307" class="white">VERIFY</text>
+    <text x="1381" y="307" class="cyan">→</text>
+    <rect x="1404" y="270" width="125" height="58" rx="29" class="phase"/><text x="1466" y="307" class="white">REPORT</text>
+  </g>
+
+  <g class="sans">
+    <rect x="76" y="405" width="300" height="210" rx="24" class="card"/>
+    <text x="108" y="454" class="mono cyan small">01 / EXPERIMENT</text><text x="108" y="502" class="white label">AIOpsLab + Kind</text>
+    <text x="108" y="545" class="muted small">Hotel Reservation</text><text x="108" y="578" class="muted small">Fault injection + ground truth</text>
+    <text x="403" y="515" class="cyan" font-size="44">→</text>
+
+    <rect x="454" y="405" width="330" height="210" rx="24" class="card"/>
+    <text x="486" y="454" class="mono cyan small">02 / EVIDENCE</text><text x="486" y="502" class="white label">Typed evidence layer</text>
+    <text x="486" y="545" class="muted small">Metrics · logs · K8s state</text><text x="486" y="578" class="muted small">Events · topology · runbooks</text>
+    <text x="811" y="515" class="cyan" font-size="44">→</text>
+
+    <rect x="862" y="405" width="300" height="210" rx="24" class="card"/>
+    <text x="894" y="454" class="mono cyan small">03 / REASONING</text><text x="894" y="502" class="white label">Topology + model</text>
+    <text x="894" y="545" class="muted small">Bounded read-only context</text><text x="894" y="578" class="muted small">Calibrated confidence · abstain</text>
+    <text x="1189" y="515" class="cyan" font-size="44">→</text>
+
+    <rect x="1240" y="405" width="289" height="210" rx="24" fill="#111f2e" stroke="#a8ff3e" stroke-width="2"/>
+    <text x="1272" y="454" class="mono lime small">04 / CONTROL</text><text x="1272" y="502" class="white label">Safety policy</text>
+    <text x="1272" y="545" class="muted small">Context · confidence · approval</text><text x="1272" y="578" class="muted small">Allowlist · dry run · verify</text>
+  </g>
+
+  <rect x="76" y="678" width="1453" height="112" rx="22" fill="#10231f" stroke="#6f9734" stroke-width="2"/>
+  <text x="108" y="724" class="mono lime small">DETERMINISTIC WRITE BOUNDARY</text>
+  <text x="108" y="763" class="sans white label">The model proposes; the control plane decides, executes, and verifies.</text>
+  <text x="1497" y="748" text-anchor="end" class="sans muted small">No arbitrary shell · no implicit approval · no success without recovery</text>
+  <rect x="76" y="835" width="1453" height="3" fill="url(#accent)" filter="url(#glow)"/>
+</svg>

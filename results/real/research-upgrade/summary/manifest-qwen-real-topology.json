@@ -1,0 +1,48 @@
+{
+  "label": "qwen-real-topology",
+  "selection_policy": "newest successful IncidentReport by finished_at for each suite problem_id",
+  "report_root": "research-upgrade",
+  "case_count": 5,
+  "selected_reports": [
+    {
+      "case_id": "pilot-config",
+      "problem_id": "misconfig_app_hotel_res-detection-1",
+      "run_id": "INC-20261014-6e5dfcba",
+      "finished_at": "2026-10-14T06:37:45.082404+00:00",
+      "source_file": "smoke/INC-20261014-6e5dfcba.json",
+      "sha256": "50610a9e7da47a2c896099ac96179d71d9a063e62af0d2ba45da8329e6d591ee"
+    },
+    {
+      "case_id": "pilot-pod",
+      "problem_id": "pod_failure_hotel_res-detection-1",
+      "run_id": "INC-20261014-80a8a8b0",
+      "finished_at": "2026-10-14T06:39:55.017998+00:00",
+      "source_file": "diagnose/INC-20261014-80a8a8b0.json",
+      "sha256": "fc70559b41454af36718de898d1769e9c8eaf2ac90691ea9899b71df945e8f94"
+    },
+    {
+      "case_id": "pilot-loss",
+      "problem_id": "network_loss_hotel_res-detection-1",
+      "run_id": "INC-20261014-c3f64826",
+      "finished_at": "2026-10-14T06:42:05.254869+00:00",
+      "source_file": "diagnose/INC-20261014-c3f64826.json",
+      "sha256": "6fa24e89581b073537dd2027d643d23ea9a0c77bba89c42a14e995a0d5eaa56f"
+    },
+    {
+      "case_id": "pilot-delay",
+      "problem_id": "network_delay_hotel_res-detection-1",
+      "run_id": "INC-20261014-9fe32f4a",
+      "finished_at": "2026-10-14T06:43:28.018091+00:00",
+      "source_file": "diagnose/INC-20261014-9fe32f4a.json",
+      "sha256": "90e6590168e49150a35991c95efc255b47901a49884baa37703ac4cc5fbbd610"
+    },
+    {
+      "case_id": "pilot-normal",
+      "problem_id": "noop_detection_hotel_reservation-1",
+      "run_id": "INC-20261014-1e5104ca",
+      "finished_at": "2026-10-14T13:03:52.371764+00:00",
+      "source_file": "diagnose/INC-20261014-1e5104ca.json",
+      "sha256": "ff81ca507001155c3ca51e28a34a05568f058a4221333a2c4fca8f52595f7b24"
+    }
+  ]
+}

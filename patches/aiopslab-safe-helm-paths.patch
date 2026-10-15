@@ -1,0 +1,168 @@
+diff --git a/aiopslab/generators/fault/inject_symp.py b/aiopslab/generators/fault/inject_symp.py
+index b1eb23c..5623cc7 100644
+--- a/aiopslab/generators/fault/inject_symp.py
++++ b/aiopslab/generators/fault/inject_symp.py
+@@ -45,20 +45,37 @@ class SymptomFaultInjector(FaultInjector):
+             raise ValueError(f"Unsupported container runtime: {container_runtime}")
+ 
+         Helm.install(**chaos_configs)
++        self.kubectl.wait_for_ready("chaos-mesh")
+ 
+     def create_chaos_experiment(self, experiment_yaml: dict, experiment_name: str):
+         chaos_yaml_path = f"/tmp/{experiment_name}.yaml"
+         with open(chaos_yaml_path, "w") as file:
+             yaml.dump(experiment_yaml, file)
+-        command = f"kubectl apply -f {chaos_yaml_path}"
+-        result = self.kubectl.exec_command(command)
+-        print(f"Applied {experiment_name} chaos experiment: {result}")
++        result = subprocess.run(
++            ["kubectl", "apply", "-f", chaos_yaml_path],
++            capture_output=True,
++            text=True,
++            check=False,
++        )
++        output = (result.stdout or result.stderr).strip()
++        if result.returncode:
++            raise RuntimeError(
++                f"Failed to apply {experiment_name} chaos experiment: {output}"
++            )
++        print(f"Applied {experiment_name} chaos experiment: {output}")
+ 
+     def delete_chaos_experiment(self, experiment_name: str):
+         chaos_yaml_path = f"/tmp/{experiment_name}.yaml"
+-        command = f"kubectl delete -f {chaos_yaml_path}"
+-        result = self.kubectl.exec_command(command)
+-        print(f"Cleaned up chaos experiment: {result}")
++        result = subprocess.run(
++            ["kubectl", "delete", "-f", chaos_yaml_path],
++            capture_output=True,
++            text=True,
++            check=False,
++        )
++        print(
++            f"Cleaned up {experiment_name} chaos experiment: "
++            f"{(result.stdout or result.stderr).strip()}"
++        )
+ 
+     def recover_pod_failure(self):
+         self.delete_chaos_experiment("pod-failure")
+diff --git a/aiopslab/generators/workload/wrk-job-template.yaml b/aiopslab/generators/workload/wrk-job-template.yaml
+index eec29d4..99363ff 100644
+--- a/aiopslab/generators/workload/wrk-job-template.yaml
++++ b/aiopslab/generators/workload/wrk-job-template.yaml
+@@ -9,6 +9,7 @@ spec:
+       containers:
+         - name: wrk2
+           image: deathstarbench/wrk2-client:latest
++          imagePullPolicy: IfNotPresent
+           args: []
+           volumeMounts:
+             - name: wrk2-scripts
+@@ -17,4 +18,4 @@ spec:
+       volumes:
+         - name: wrk2-scripts
+           configMap:
+-            name: wrk2-payload-script
+\ No newline at end of file
++            name: wrk2-payload-script
+diff --git a/aiopslab/service/helm.py b/aiopslab/service/helm.py
+index 2ac23ff..16e2aef 100644
+--- a/aiopslab/service/helm.py
++++ b/aiopslab/service/helm.py
+@@ -4,6 +4,7 @@
+ """Interface for helm operations"""
+ 
+ import os
++import shlex
+ import subprocess
+ 
+ from aiopslab.service.kubectl import KubeCtl
+@@ -42,26 +43,40 @@ class Helm:
+ 
+         Helm._validate_chart_path(chart_path, remote_chart)
+ 
++        if Helm.exists_release(release_name, namespace):
++            print(f"Release {release_name} already exists. Skipping installation.")
++            return
++
+         if not remote_chart:
+             # Install dependencies for chart before installation
+-            dependency_command = f"helm dependency update {chart_path}"
++            dependency_command = ["helm", "dependency", "update", chart_path]
+             dependency_process = subprocess.Popen(
+                 dependency_command,
+-                shell=True,
+                 stdout=subprocess.PIPE,
+                 stderr=subprocess.PIPE,
+             )
+             dependency_output, dependency_error = dependency_process.communicate()
+ 
+-        command = f"helm install {release_name} {chart_path} -n {namespace} --create-namespace"
++        command = [
++            "helm",
++            "install",
++            release_name,
++            chart_path,
++            "-n",
++            namespace,
++            "--create-namespace",
++        ]
+ 
+         if version:
+-            command += f" --version {version}"
++            command.extend(["--version", str(version)])
+ 
+         if extra_args:
+-            command += " " + " ".join(extra_args)
++            for value in extra_args:
++                command.extend(shlex.split(str(value)))
+ 
+-        process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
++        process = subprocess.Popen(
++            command, stdout=subprocess.PIPE, stderr=subprocess.PIPE
++        )
+         output, error = process.communicate()
+ 
+         if error:
+diff --git a/aiopslab/service/kubectl.py b/aiopslab/service/kubectl.py
+index a80855f..c17ae50 100644
+--- a/aiopslab/service/kubectl.py
++++ b/aiopslab/service/kubectl.py
+@@ -248,8 +248,11 @@ class KubeCtl:
+ 
+     def apply_configs(self, namespace: str, config_path: str):
+         """Apply Kubernetes configurations from a specified path to a namespace."""
+-        command = f"kubectl apply -Rf {config_path} -n {namespace}"
+-        self.exec_command(command)
++        subprocess.run(
++            ["kubectl", "apply", "-R", "-f", config_path, "-n", namespace],
++            check=True,
++            capture_output=True,
++        )
+ 
+     def delete_configs(self, namespace: str, config_path: str):
+         """Delete Kubernetes configurations from a specified path in a namespace."""
+@@ -259,10 +262,20 @@ class KubeCtl:
+             )
+             if exists_resource:
+                 print(f"Deleting K8S configs in namespace: {namespace}")
+-                command = (
+-                    f"kubectl delete -Rf {config_path} -n {namespace} --timeout=10s"
++                subprocess.run(
++                    [
++                        "kubectl",
++                        "delete",
++                        "-R",
++                        "-f",
++                        config_path,
++                        "-n",
++                        namespace,
++                        "--timeout=10s",
++                    ],
++                    check=True,
++                    capture_output=True,
+                 )
+-                self.exec_command(command)
+             else:
+                 print(f"No resources found in: {namespace}. Skipping deletion.")
+         except subprocess.CalledProcessError as e:

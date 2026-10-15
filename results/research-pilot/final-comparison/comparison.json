@@ -1,0 +1,44 @@
+{
+  "comparison_contract": {
+    "suite_case_count": 5,
+    "variant": "full",
+    "temperature": 0,
+    "note": "All models use the same evidence and metrics; calibration needs a held-out split for claims."
+  },
+  "models": [
+    {
+      "model_spec": "rule",
+      "model_name": "rule-based-v2-evidence-only",
+      "case_count": 5,
+      "unique_problem_count": 5,
+      "fault_detection_recall": 1.0,
+      "localization_accuracy": 1.0,
+      "root_cause_accuracy": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "abstention_rate": 0.0,
+      "ece": 0.07000000000000002,
+      "brier_score": 0.005699999999999996,
+      "avg_response_time_seconds": 0.00018,
+      "total_token_usage": 0,
+      "error_count": 0
+    },
+    {
+      "model_spec": "qwen2.5:14b",
+      "model_name": "qwen2.5:14b",
+      "case_count": 5,
+      "unique_problem_count": 5,
+      "fault_detection_recall": 1.0,
+      "localization_accuracy": 1.0,
+      "root_cause_accuracy": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "abstention_rate": 0.0,
+      "ece": 0.018000400000000027,
+      "brier_score": 0.0005800000004000023,
+      "avg_response_time_seconds": 20.4558,
+      "total_token_usage": 4566,
+      "error_count": 0
+    }
+  ]
+}

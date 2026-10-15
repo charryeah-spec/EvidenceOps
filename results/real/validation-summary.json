@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "validated_at": "2026-08-29",
+  "environment": "Microsoft AIOpsLab + Kind + Hotel Reservation",
+  "model": "qwen2.5:14b via Ollama",
+  "case_count": 5,
+  "fault_case_count": 4,
+  "healthy_control_count": 1,
+  "expected_outcomes_matched": 5,
+  "localization_matches": 4,
+  "root_cause_matches": 4,
+  "approved_repairs": 2,
+  "verified_recoveries": 2,
+  "mean_end_to_end_seconds": 103.56896,
+  "scope_note": "Small end-to-end feasibility snapshot; not a general benchmark.",
+  "scenarios": [
+    {
+      "scenario": "application image misconfiguration",
+      "service": "geo",
+      "detected": true,
+      "root_cause": "application_image_misconfiguration",
+      "response_time_seconds": 87.4622,
+      "verified_recovery": true
+    },
+    {
+      "scenario": "network delay",
+      "service": "user",
+      "detected": true,
+      "root_cause": "network_delay",
+      "response_time_seconds": 101.4287,
+      "verified_recovery": null
+    },
+    {
+      "scenario": "network packet loss",
+      "service": "user",
+      "detected": true,
+      "root_cause": "network_packet_loss",
+      "response_time_seconds": 120.7697,
+      "verified_recovery": null
+    },
+    {
+      "scenario": "healthy control",
+      "service": null,
+      "detected": false,
+      "root_cause": null,
+      "response_time_seconds": 93.8576,
+      "verified_recovery": null
+    },
+    {
+      "scenario": "pod failure",
+      "service": "user",
+      "detected": true,
+      "root_cause": "pod_failure",
+      "response_time_seconds": 114.3266,
+      "verified_recovery": true
+    }
+  ]
+}
+

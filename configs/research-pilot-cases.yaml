@@ -1,0 +1,6 @@
+cases:
+  - {case_id: pilot-config, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: pilot-pod, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pilot-loss, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: pilot-delay, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: pilot-normal, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}

@@ -1,0 +1,13 @@
+diff --git a/hotelReservation/kubernetes/consul/consul-deployment.yaml b/hotelReservation/kubernetes/consul/consul-deployment.yaml
+index 840eff4..33a984a 100644
+--- a/hotelReservation/kubernetes/consul/consul-deployment.yaml
++++ b/hotelReservation/kubernetes/consul/consul-deployment.yaml
+@@ -26,7 +26,7 @@ spec:
+         io.kompose.service: consul
+     spec:
+       containers:
+-        - image: hashicorp/consul:latest
++        - image: docker.1ms.run/hashicorp/consul@sha256:86b2a80fb80acab8d6383344256229a6edb0e37212eb88b7612699caa6ce536e
+           name: consul
+           ports:
+             - containerPort: 8300

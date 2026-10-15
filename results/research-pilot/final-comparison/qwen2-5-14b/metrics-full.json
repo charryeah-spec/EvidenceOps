@@ -1,0 +1,70 @@
+{
+  "providers": [
+    "FixtureProvider"
+  ],
+  "diagnosis_engines": [
+    "OpenAICompatibleDiagnosisEngine"
+  ],
+  "model_names": [
+    "qwen2.5:14b"
+  ],
+  "variants": [
+    "full"
+  ],
+  "synthetic_fixture_results": true,
+  "case_count": 5,
+  "fault_case_count": 4,
+  "unique_problem_count": 5,
+  "unique_fault_problem_count": 4,
+  "repeated_case_count": 0,
+  "fault_detection_recall": 1.0,
+  "course_detection_accuracy": 1.0,
+  "detection_accuracy_95ci": {
+    "low": 0.5100999795960008,
+    "high": 1.0,
+    "method": "Wilson score"
+  },
+  "overall_accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "false_positive_rate": 0.0,
+  "localization_accuracy": 1.0,
+  "root_cause_accuracy": 1.0,
+  "abstention_count": 0,
+  "abstention_rate": 0.0,
+  "coverage": 1.0,
+  "selective_accuracy": 1.0,
+  "calibration": {
+    "sample_count": 5,
+    "ece": 0.018000400000000027,
+    "brier_score": 0.0005800000004000023,
+    "bins": [
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 5,
+        "mean_confidence": 0.9819996,
+        "accuracy": 1.0
+      }
+    ],
+    "configured_temperatures": [
+      1.0
+    ],
+    "raw_ece": 0.018000000000000016,
+    "raw_brier_score": 0.000580000000000001,
+    "fitted_temperature_candidate": 1.0,
+    "fitted_candidate_ece": 0.018000400000000027,
+    "fitted_candidate_brier_score": 0.0005800000004000023,
+    "fit_note": "Reported ECE/Brier use the configured temperature. The fitted candidate uses this dataset only and must be evaluated on a held-out test split."
+  },
+  "avg_response_time_all_seconds": 20.4558,
+  "avg_response_time_faults_seconds": 25.569675,
+  "avg_tool_calls": 1.8,
+  "total_token_usage": 4566,
+  "repair_case_count": 0,
+  "repair_success_rate": null,
+  "avg_recovery_time_seconds": null,
+  "invalid_operation_rate": null,
+  "error_count": 0
+}

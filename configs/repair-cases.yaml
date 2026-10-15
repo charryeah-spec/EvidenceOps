@@ -1,0 +1,11 @@
+cases:
+  - {case_id: repair-cfg-01, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: repair-cfg-02, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: repair-cfg-03, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: repair-cfg-04, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: repair-cfg-05, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: repair-pod-01, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: repair-pod-02, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: repair-pod-03, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: repair-pod-04, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: repair-pod-05, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}

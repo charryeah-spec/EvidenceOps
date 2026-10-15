@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">EvidenceOps safe remediation pipeline</title>
+  <desc id="desc">A proposed Kubernetes remediation crosses explicit approval, semantic policy, server-side dry run, execution, and recovery verification.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#061120"/><stop offset="1" stop-color="#111b34"/></linearGradient>
+    <style>.s{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}.m{font-family:"SFMono-Regular",Consolas,monospace}.w{fill:#f3f7ff}.u{fill:#91a4bf}.c{fill:#28d7d1}.l{fill:#a8ff3e}.card{fill:#0e1c31;stroke:#29405f;stroke-width:2}.title{font-size:58px;font-weight:800}.label{font-size:23px;font-weight:750}.body{font-size:21px}.num{font-size:52px;font-weight:800}.kick{font-size:18px;font-weight:800;letter-spacing:4px}</style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="76" y="80" class="m c kick">SAFE REMEDIATION / HUMAN IN THE LOOP</text>
+  <text x="76" y="150" class="s w title">A recommendation is not permission to act</text>
+  <text x="76" y="200" class="s u" font-size="24">Every write crosses five deterministic gates. Success means verified recovery, not a zero exit code.</text>
+
+  <g class="s" text-anchor="middle">
+    <rect x="76" y="292" width="250" height="170" rx="24" class="card"/><circle cx="122" cy="335" r="21" fill="#173b48"/><text x="122" y="343" class="c label">1</text><text x="201" y="352" class="w label">Human approval</text><text x="201" y="398" class="u body">Explicit opt-in</text><text x="201" y="428" class="u body">for this incident</text>
+    <text x="349" y="388" class="c" font-size="44">→</text>
+    <rect x="376" y="292" width="250" height="170" rx="24" class="card"/><circle cx="422" cy="335" r="21" fill="#173b48"/><text x="422" y="343" class="c label">2</text><text x="502" y="352" class="w label">Semantic policy</text><text x="502" y="398" class="u body">Fault ↔ action</text><text x="502" y="428" class="u body">target ↔ namespace</text>
+    <text x="649" y="388" class="c" font-size="44">→</text>
+    <rect x="676" y="292" width="250" height="170" rx="24" class="card"/><circle cx="722" cy="335" r="21" fill="#173b48"/><text x="722" y="343" class="c label">3</text><text x="801" y="352" class="w label">Server dry run</text><text x="801" y="398" class="u body">Validate against</text><text x="801" y="428" class="u body">the live API server</text>
+    <text x="949" y="388" class="c" font-size="44">→</text>
+    <rect x="976" y="292" width="250" height="170" rx="24" class="card"/><circle cx="1022" cy="335" r="21" fill="#173b48"/><text x="1022" y="343" class="c label">4</text><text x="1101" y="352" class="w label">Allowlisted write</text><text x="1101" y="398" class="u body">Restore image or</text><text x="1101" y="428" class="u body">restart Deployment</text>
+    <text x="1249" y="388" class="c" font-size="44">→</text>
+    <rect x="1276" y="292" width="253" height="170" rx="24" fill="#15251f" stroke="#a8ff3e" stroke-width="2"/><circle cx="1322" cy="335" r="21" fill="#36542c"/><text x="1322" y="343" class="l label">5</text><text x="1402" y="352" class="w label">Verify recovery</text><text x="1402" y="398" class="u body">Rollout · pods</text><text x="1402" y="428" class="u body">endpoints · health</text>
+  </g>
+
+  <rect x="76" y="526" width="1453" height="96" rx="20" fill="#0d2031" stroke="#28d7d1" stroke-width="2"/>
+  <text x="110" y="568" class="m c" font-size="18" font-weight="700">EXAMPLE APPROVED ACTION</text>
+  <text x="110" y="602" class="m w" font-size="23">restore_deployment_image(target="geo", image="yinfangchen/hotelreservation:latest")</text>
+  <rect x="1310" y="547" width="176" height="50" rx="12" fill="#233821" stroke="#a8ff3e" stroke-width="3"/><text x="1398" y="580" text-anchor="middle" class="m l label">APPROVED</text>
+
+  <g class="s">
+    <rect x="76" y="680" width="330" height="140" rx="20" class="card"/><text x="108" y="736" class="l num">2</text><text x="108" y="780" class="w label">allowlisted action types</text>
+    <rect x="430" y="680" width="330" height="140" rx="20" class="card"/><text x="462" y="736" class="l num">0</text><text x="462" y="780" class="w label">arbitrary shell commands</text>
+    <rect x="784" y="680" width="330" height="140" rx="20" class="card"/><text x="816" y="736" class="l num">2 / 2</text><text x="816" y="780" class="w label">real repairs recovered</text>
+    <rect x="1138" y="680" width="391" height="140" rx="20" class="card"/><text x="1170" y="736" class="l num">5</text><text x="1170" y="780" class="w label">stored real validation scenarios</text>
+  </g>
+</svg>
+

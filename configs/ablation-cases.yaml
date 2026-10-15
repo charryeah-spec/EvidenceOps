@@ -1,0 +1,13 @@
+cases:
+  - {case_id: cfg-a1, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-a2, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: cfg-a3, problem_id: misconfig_app_hotel_res-detection-1, expected_detected: true, expected_service: geo, expected_root_cause: application_image_misconfiguration, fault_type: app_misconfig, auto_remediable: true}
+  - {case_id: pod-a1, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-a2, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: pod-a3, problem_id: pod_failure_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: pod_failure, fault_type: pod_failure, auto_remediable: true}
+  - {case_id: loss-a1, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: loss-a2, problem_id: network_loss_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_packet_loss, fault_type: network_loss}
+  - {case_id: delay-a1, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: delay-a2, problem_id: network_delay_hotel_res-detection-1, expected_detected: true, expected_service: user, expected_root_cause: network_delay, fault_type: network_delay}
+  - {case_id: normal-a1, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
+  - {case_id: normal-a2, problem_id: noop_detection_hotel_reservation-1, expected_detected: false, fault_type: normal}
